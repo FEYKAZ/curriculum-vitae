@@ -1,0 +1,88 @@
+/* =========================================================
+   CERTIFICATE IMAGE CSS
+   Only certificate cards and certificate images are handled here.
+   ========================================================= */
+
+.certificate-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.certificate-card {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  transition: .3s;
+}
+
+.certificate-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--line-bright);
+}
+
+.certificate-image {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--panel-light);
+}
+
+.certificate-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  cursor: zoom-in;
+  transition: transform .4s ease, filter .3s ease;
+}
+
+.certificate-card:hover .certificate-image img {
+  transform: scale(1.04);
+}
+
+.certificate-info {
+  padding: 17px;
+}
+
+.certificate-info h3 {
+  font-size: .88rem;
+}
+
+.certificate-info p {
+  color: var(--muted);
+  font-size: .72rem;
+}
+
+/* Certificate image lightbox */
+.certificate-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: none;
+  place-items: center;
+  padding: 30px;
+  background: rgba(0,0,0,.88);
+  backdrop-filter: blur(8px);
+}
+
+.certificate-lightbox.open {
+  display: grid;
+}
+
+.certificate-lightbox img {
+  max-width: min(1000px, 95vw);
+  max-height: 90vh;
+  object-fit: contain;
+  border: 1px solid rgba(255,255,255,.3);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 22px;
+  right: 28px;
+  border: 0;
+  background: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+}

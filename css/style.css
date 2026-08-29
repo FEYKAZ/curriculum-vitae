@@ -1,1 +1,12 @@
+/* =========================================================
+   MAIN STYLE
+   Component CSS is separated into individual files.
+   ========================================================= */
 
+@import url("theme.css");
+@import url("base.css");
+@import url("layout.css");
+@import url("images.css");
+@import url("social.css");
+@import url("certificates.css");
+@import url("responsive.css");
